@@ -26,3 +26,16 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# Elements
+
+    Home Page
+        Featured Post with slider
+        Blog Post
+        Comments
+        Author Bio
+        Popular Post
+        Category
+        Tags
+        Instagram Image
+        Social Links
