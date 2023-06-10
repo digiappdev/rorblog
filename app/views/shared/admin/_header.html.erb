@@ -17,4 +17,19 @@
   <div id="navbarSearch" class="navbar-search w-25 collapse m-auto">
     <input class="form-control w-100 border-0 px-3 py-2" type="text" placeholder="Search" aria-label="Search">
   </div>
+  <div class="dropdown me-3">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-lg-end">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Sign Out', destroy_user_session_path, data: {turbo_method: :delete}, class: 'dropdown-item' %>
+        </li>
+        <li>
+          <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </header>
