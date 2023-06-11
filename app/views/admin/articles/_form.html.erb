@@ -1,0 +1,59 @@
+<%#========== Header ==========%>
+<%= render 'shared/admin/header' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%#========== Sidebar ==========%>
+    <%= render 'shared/admin/sidebar' %>
+
+    <%#========== Main ==========%>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <%# ========== Header ========== %>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 my-2"><%= controller_name.capitalize  %></h1>
+        <%= link_to 'New Article', new_admin_article_path, class: 'btn btn-sm btn-primary' %>
+      </div>
+
+      <%#========== Form ==========%>
+        <%= form_with(model: [:admin, article]) do |form| %>
+          <% if article.errors.any? %>
+            <div style="color: red">
+              <h2>
+                <%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:
+              </h2>
+
+              <ul>
+                <% article.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </uli>
+            </div>
+          <% end %>
+          <div class="mb-2">   
+            <%= form.label :title, class: 'form-label' %>
+            <%= form.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="mb-2">
+            <%= form.label :content, class: 'form-label' %>
+            <%= form.text_area :content, class: 'form-control' %>
+          </div>
+
+          <div class="mb-2">
+            <%= form.label :pubdate, class: 'form-label' %>
+            <%= form.date_field :pubdate, class: 'form-control' %>
+          </div>
+
+          <div class="mb-2">
+            <%= form.label :status, class: 'form-label' %>
+            <%= form.number_field :status, class: 'form-select' %>
+          </div>
+
+          <div class="mb-2">
+            <%= form.submit(article.new_record? ? 'Save' : 'Update', class: 'btn btn-sm btn-success') %>
+            <%= link_to 'Cancle', admin_articles_path, class: 'btn btn-sm btn-danger' %>
+          </div>
+        <% end %>       
+      </div>
+    </main>
+  </div>

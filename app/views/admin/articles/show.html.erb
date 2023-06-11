@@ -1,0 +1,28 @@
+<%#========== Header ==========%>
+<%= render 'shared/admin/header' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%#========== Sidebar ==========%>
+    <%= render 'shared/admin/sidebar' %>
+
+    <%#========== Main ==========%>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <%# ========== Header ========== %>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 my-2"><%= controller_name.capitalize  %></h1>
+        <%= link_to 'New Article', new_admin_article_path, class: 'btn btn-sm btn-primary' %>
+      </div>
+
+      <%#========== Table ==========%>
+      <div class="table-responsive small">
+        <%= render @article %>  
+        <div class="d-flex">
+          <%= link_to "Edit this article", edit_admin_article_path(@article), class: 'btn btn-sm btn-primary me-2' %> 
+          <%= link_to "Back to articles", admin_articles_path, class: 'btn btn-sm btn-primary me-2' %>
+          <%= button_to "Destroy this article", admin_article_path(@article), method: :delete, class: 'btn btn-sm btn-danger' %>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

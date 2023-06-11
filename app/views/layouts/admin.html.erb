@@ -10,7 +10,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="<%= controller_name %>">
+  <body class="admin <%= controller_name %>">
     <% if notice %>
       <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
         <p class="notice mb-0"><%= notice %></p>

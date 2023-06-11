@@ -1,0 +1,68 @@
+<%#========== Header ==========%>
+<%= render 'shared/admin/header' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <%#========== Sidebar ==========%>
+    <%= render 'shared/admin/sidebar' %>
+
+    <%#========== Main ==========%>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <%# ========== Header ========== %>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 my-2"><%= controller_name.capitalize  %></h1>
+        <%= link_to 'New Article', new_admin_article_path, class: 'btn btn-sm btn-primary' %>
+      </div>
+
+      <%#========== Table ==========%>
+      <div class="table-responsive small">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Content</th>
+              <th scope="col">Status</th>
+              <th scope="col">Author</th>
+              <th scope="col">Published Date</tih>  
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <div id="articles">
+              <% @articles.each do |article| %>
+                <tr>
+                  <td><%= article.id %></td>
+                  <td>
+                    <%= article.title %>
+                  </td>
+                  <td>
+                    <%= truncate(article.content, length: 40) %>
+                  </td>
+                  <td>
+                    <%= article.status %>
+                  </td>
+                  <td>
+                    <%= article.user.email %>
+                  </td>
+                  <td>
+                    <%= article.pubdate %>
+                  </td>
+                  <td>
+                    <%= link_to admin_article_path(article) do %>
+                      <i class="bi bi-eye"></i>
+                    <% end %>  
+
+                    <%= link_to edit_admin_article_path(article) do %>
+                      <i class="bi bi-pencil-square"></i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </div>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
