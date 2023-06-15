@@ -251,7 +251,7 @@
                                   <li class="list-inline-item"><%= article.pubdate.strftime("%b %d, %Y") %></li>
                                 </ul>
                                 <h5 class="post-title mb-3 mt-3">
-                                  <%= link_to article.title, admin_article_path(article) %>
+                                  <%= link_to article.title.truncate(40), admin_article_path(article) %>
                                 </h5>
                                 <p class="excerpt mb-0">
                                   <%= article.content.to_plain_text.truncate(100)  %>
