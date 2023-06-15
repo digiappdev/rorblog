@@ -1,4 +1,6 @@
-<div id="<%= dom_id article %>">
+<div class="row">
+  <div class="col-md-8">
+  <div id="<%= dom_id article %>">
   <p>
     <strong>Title:</strong>
     <%= article.title %>
@@ -8,14 +10,30 @@
     <strong>Content:</strong>
     <%= article.content %>
   </p>
+  </div>
+  </div>
+  <div class="col-md-4">
+    <div class="sticky-top">
+    <% if article.fetimg.attached? %>
+      <p>
+        <%= image_tag article.fetimg.variant(:thumb), class: 'img-fluid' %>
+      </p>
+    <% end %>
 
-  <p>
-    <strong>Pubdate:</strong>
-    <%= article.pubdate %>
-  </p>
-
-  <p>
-    <strong>Status:</strong>
-    <%= article.status %>
-  </p>
+      <p>
+        <strong>Pubdate:</strong>
+        <%= article.pubdate %>
+      </p>
+      <p>
+        <strong>Status:</strong>
+        <%= article.status %>
+      </p>
+        
+        <div class="d-flex">
+          <%= link_to "Edit this article", edit_admin_article_path(@article), class: 'btn btn-sm btn-primary me-2' %> 
+          <%= link_to "Back to articles", admin_articles_path, class: 'btn btn-sm btn-primary me-2' %>
+          <%= button_to "Destroy this article", admin_article_path(@article), method: :delete, class: 'btn btn-sm btn-danger' %>
+        </div>
+    </div>
+  </div>
 </div>

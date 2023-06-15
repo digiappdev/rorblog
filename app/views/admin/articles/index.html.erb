@@ -37,10 +37,10 @@
                     <%= article.title %>
                   </td>
                   <td>
-                    <%= truncate(article.content, length: 40) %>
+                    <%= article.content.to_plain_text.truncate(70) %>
                   </td>
                   <td>
-                    <%= article.status %>
+                    <%= article.status.capitalize %>
                   </td>
                   <td>
                     <%= article.user.email %>

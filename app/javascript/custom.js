@@ -2,12 +2,12 @@
           Preloader
 =========================================================================*/
 
-window.onload = function() {
-  window.setTimeout(fadeout, 1000); //1 seconds
-}
-function fadeout() {
-  document.getElementById('preloader').style.display = "none"; 
-}
+//window.onload = function() {
+//  window.setTimeout(fadeout, 1000); //1 seconds
+//}
+//function fadeout() {
+//  document.getElementById('preloader').style.display = "none"; 
+//}
 // let preloader = document.querySelector('#preloader')
 
 

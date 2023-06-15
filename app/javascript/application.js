@@ -2,8 +2,11 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import * as bootstrap from "bootstrap"
-import './custom'
+// import './custom'
 import Swiper from 'swiper/bundle'
+import "trix"
+import "@rails/actiontext"
+
 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,

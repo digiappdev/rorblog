@@ -3,10 +3,13 @@
 @import 'style';
 @import 'swiper/swiper-bundle';
 @import 'admin';
+@import 'actiontext.css';
 
 // Swiper Js
+.frontend{
 .swiper{
     .swiper-wrapper{
         min-height: 25rem;
     }
+}
 }
