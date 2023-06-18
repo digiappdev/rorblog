@@ -1,0 +1,12 @@
+<%= form_with(model: [:admin, category]) do |form| %>
+  <%= render 'shared/admin/errors', obj: category %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit(category.new_record? ? 'Save' : 'Update', class: 'btn btn-sm btn-primary rounded-0') %>
+  </div>
+<% end %>

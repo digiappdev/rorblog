@@ -10,5 +10,8 @@ class Article < ApplicationRecord
     attachable.variant :frontthumb, resize_to_fill: [400, 250]
   end
   has_rich_text :content
+  has_and_belongs_to_many :categories
   belongs_to :user
+
+  validates :title, presence: true, length: {minimum: 20, maximum: 70}
 end
