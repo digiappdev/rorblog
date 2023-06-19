@@ -42,3 +42,4 @@ end
 
 #Custom Gems
 gem "devise"
+gem "pagy"

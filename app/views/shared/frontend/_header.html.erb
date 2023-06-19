@@ -15,10 +15,10 @@
 
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
           <!-- site logo -->
-          <a class="navbar-brand" href="personal.html">
-            <%= image_tag 'other/avatar-lg.png', alt: 'logo' %>
-          </a>
-          <a href="personal.html" class="d-block text-logo">Katen<span class="dot">.</span></a>
+          <%= link_to root_path, class: 'navbar-brnd' do %>
+						<%= image_tag 'other/avatar-lg.png', alt: 'logo' %>
+						<h3 class="text-logo"><%= "Katen" %><span class="dot">.</span></h3>
+					<% end  %>
           <span class="slogan d-block">Professional Writer & Personal Blogger</span>
         </div>
 
