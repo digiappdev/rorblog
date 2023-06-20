@@ -17,16 +17,12 @@
             <i class="bi-journal"></i>
             Articles
           <% end %>
-          <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <i class="bi-file-earmark" style="font-size: 1rem;"></i>
-            Orders
-            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <i class="bi-file-earmark" style="font-size: 1rem;"></i>
-            Products
-            </a>
+            <%= link_to admin_categories_path, class: 'nav-link d-flex align-items-center gap-2 active' do %>
+                <i class="bi-file-earmark"></i>
+                Categories
+            <% end %>
         </li>
         <li class="nav-item">
             <a class="nav-link d-flex align-items-center gap-2" href="#">
