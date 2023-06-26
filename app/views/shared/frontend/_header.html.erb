@@ -15,7 +15,7 @@
 
         <div class="col-md-4 col-sm-12 col-xs-12 text-center">
           <!-- site logo -->
-          <%= link_to root_path, class: 'navbar-brnd' do %>
+          <%= link_to root_path, class: 'navbar-brand', data: {turbo: 'false'} do %>	
 						<%= image_tag 'other/avatar-lg.png', alt: 'logo' %>
 						<h3 class="text-logo"><%= "Katen" %><span class="dot">.</span></h3>
 					<% end  %>

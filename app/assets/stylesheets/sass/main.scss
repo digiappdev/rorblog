@@ -440,8 +440,8 @@ section {
             margin: 0 30px;
             padding: 20px 0;
             .icons {
-                opacity: 0;
-                visibility: hidden;
+                // opacity: 0;
+                // visibility: hidden;
                 @include transition(.2s);
                 &:before {
                     content: '';
