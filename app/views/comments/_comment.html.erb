@@ -1,0 +1,25 @@
+<li class="comment rounded">
+  <div class="thumb">
+		<%= image_tag 'other/comment-1.png', alt: 'john doe' %>
+	</div>
+	<div class="details">
+		<h4 class="name">
+		  <%= comment.user.email %>
+		</h4>
+		<span class="date">Submitted <%= time_ago_in_words(comment.created_at) %> ago</span>
+		<p><%= comment.content %></p>
+    <% if user_signed_in? %>
+      <%= link_to 'Delete', comment_path(comment), data: {turbo_method: :delete}, class: 'btn btn-sm btn-outline-danger' %>
+    <% end %>
+    <%= form_for([comment, Comment.new], :html => {class: 'comment-form'}) do |f| %>
+      <%= f.text_area :content, placeholder: "Add a Reply", class: 'form-control rounded-3 mt-3' %>
+      <%= f.submit "Reply", class: 'btn btn-sm btn-outline-success mt-2'  %>
+    <% end %>
+	</div>
+ 
+
+  <ul>
+    <li class="comment child"><%= render partial: 'comments/comment', collection: comment.comments %></li>
+  </ul>
+
+</li>

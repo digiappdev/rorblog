@@ -85,7 +85,26 @@
 			    <%= render 'author' %>
 
 					<!-- post comments -->
-          <%= render 'comments' %>
+					<div class="section-header">
+						<h3 class="section-title">Leave Comment</h3>
+						<%= image_tag 'wave.svg', class: 'wave', alt: 'wave' %>
+					</div>
+
+
+          <div class="comment-form rounded bordered padding-30">
+          <%= form_for([@article, Comment.new], :html => {class: 'comment-form'}) do |f| %>
+            <%= f.text_area :content, placeholder: "Add a comment", class: 'form-control rounded-3 mb-3' %>
+            <%= f.submit "Add Comment", class: 'btn btn-sm btn-outline-primary rounded-3' %>
+          <% end %>
+          </div>
+
+          <% if @article.comments.any? %>
+          <div class="comments bordered p-4 my-4 rounded">
+						<ul class="comments">
+              <%= render(partial: 'comments/comment', collection: @article.comments) %>
+            </ul>
+          </div>
+          <% end %>
         </div>
 
 				<!-- sidebar -->

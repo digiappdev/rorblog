@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  
+  has_many :comments, as: :commentable, dependent: :destroy 
   enum status: [:draft, :published]
 
   scope :published, -> {where(status: 1) }
