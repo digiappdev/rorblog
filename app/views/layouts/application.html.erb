@@ -1,8 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
-    <title>Rorblog</title>
+    <meta charset="utf-8" />
+    <title>rorblog - Blog Built on Ruby on Rails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="author" content="Chris Mills" />
+    <meta
+      name="description"
+      content="" />
+    <meta
+      property="og:image"
+      content="https://developer.mozilla.org/mdn-social-share.png" />
+    <meta
+      property="og:description"
+      content="" />
+    <meta property="og:title" content="" />
+    <meta name="twitter:title" content="" />
+
+    <!-- third-generation iPad with high-resolution Retina display: -->
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'apple-touch-icon-precomposed', sizes: '144x144' %>
+    <!-- iPhone with high-resolution Retina display: -->
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'apple-touch-icon-precomposed', sizes: '114x114' %>
+    <!-- first- and second-generation iPad: -->
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'apple-touch-icon-precomposed', sizes: '72x72' %>
+    <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'apple-touch-icon-precomposed' %>
+    <!-- basic favicon -->
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'icon' %>
+
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
